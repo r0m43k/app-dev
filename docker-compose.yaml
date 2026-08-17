@@ -16,3 +16,8 @@ services:
       POSTGRES_NAME: "postgres"
       POSTGRES_USER: "admin"
       POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
