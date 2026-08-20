@@ -1,3 +1,35 @@
 name: test
 
 on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: installing python
+        run: pip install python
+
+      - name: installing flake
+        run: python -m pip install flake8
+        
+      - name: run flake8 
+        run: flake8 .
+
+  build:
+    runs-on: ubuntu-latest
+    depends-on: lint
+    steps: 
+      - name: 
+  
+  
+  
+  push:
